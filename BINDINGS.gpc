@@ -1,0 +1,34 @@
+function bind(BIND, KEY, VAL) {
+	if(get_keyboard(BIND)){
+	set_val(KEY, VAL);
+	}
+}
+
+
+function doubleBind(FB, SB, KEY, VAL) {
+	if(get_keyboard(FB) && get_keyboard(SB)){
+	set_val(KEY, VAL);
+	}
+}
+
+
+main {
+// RETURN KEYS
+bind(KEY_BACKSPACE, XB360_B, 100)
+bind(KEY_DELETE, XB360_B, 100)
+bind(KEY_RIGHTCTRL, XB360_B, 100)
+
+// SELECT KEYS
+bind(KEY_ENTER, XB360_A, 100)
+bind(KEY_INSERT, XB360_A, 100)
+
+// SLOWWALKING
+doubleBind(KEY_LEFTALT, KEY_W, XB360_LY, 40)
+doubleBind(KEY_LEFTALT, KEY_S, XB360_LY, -40)
+doubleBind(KEY_LEFTALT, KEY_D, XB360_LX, 40)
+doubleBind(KEY_LEFTALT, KEY_A, XB360_LX, -40)
+
+// WEAPONS / STREAKS
+bind(KEY_2, XB360_Y, 100)
+bind(KEY_3, XB360_RIGHT, 100)
+}
